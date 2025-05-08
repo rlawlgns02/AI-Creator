@@ -1,0 +1,1048 @@
+:root {
+  --primary-color: #5E72E4; /* 부드러운 파란색 계열 */
+  --secondary-color: #8898AA; /* 차분한 회색 계열 */
+  --accent-color: #2DCE89; /* 포인트 색상 (성공/완료) */
+  --background-light: #F8F9FE; /* 아주 밝은 배경색 */
+  --text-color: #32325D; /* 진한 텍스트 색상 */
+  --border-radius: 8px;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* 부드러운 그림자 */
+  --transition-speed: 0.4s; /* 트랜지션 속도 */
+}
+
+body {
+  font-family: 'Pretendard', sans-serif; /* 최신 웹폰트 사용 권장 (설치 필요하거나 link 태그 추가 필요) */
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.logo i {
+  margin-right: 8px;
+  font-size: 1.2em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 25px; /* 간격 조정 */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: 500;
+  transition: color var(--transition-speed) ease;
+}
+
+nav a:hover {
+  color: var(--primary-color);
+}
+
+.cta-button, .secondary-button {
+  display: inline-block;
+  padding: 12px 25px; /* 패딩 조정 */
+  border-radius: 25px; /* 더 부드러운 버튼 */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease; /* 변형 애니메이션 추가 */
+  text-align: center;
+}
+
+.cta-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.cta-button:hover {
+  background-color: #4a5acb; /* 약간 어두운 호버 색상 */
+  transform: translateY(-2px); /* 살짝 위로 움직이는 효과 */
+}
+
+.cta-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--primary-color);
+  color: white;
+   transform: translateY(-2px); /* 살짝 위로 움직이는 효과 */
+}
+
+
+section {
+  padding: 100px 0; /* 섹션별 패딩 증가 */
+}
+
+#hero .container {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* 간격 증가 */
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+  
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+
+}
+
+#features {
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+#features h2, #how-it-works h2, #demo h2, #use-cases h2, #additional-ideas h2, #cta-bottom h2 {
+  font-size: 2.8em; /* 섹션 제목 크기 증가 */
+  margin-bottom: 60px;
+  color: var(--text-color);
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px; /* 간격 증가 */
+}
+
+.feature-item {
+  background-color: #fff;
+  padding: 40px; /* 패딩 증가 */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 호버 애니메이션 추가 */
+}
+
+.feature-item:hover {
+  transform: translateY(-10px); /* 위로 더 많이 움직임 */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12); /* 더 강한 그림자 */
+}
+
+.feature-item i {
+  font-size: 3.5em; /* 아이콘 크기 증가 */
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.feature-item h3 {
+  font-size: 1.4em; /* 제목 크기 증가 */
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.feature-item p {
+  font-size: 1em; /* 본문 크기 조정 */
+  color: var(--secondary-color);
+}
+
+#how-it-works {
+  text-align: center;
+}
+
+.steps-process {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 아이콘/번호가 상단에 정렬되도록 */
+  margin-top: 60px;
+  gap: 30px; /* 간격 조정 */
+  flex-wrap: wrap; /* 작은 화면 대응 */
+}
+
+.step-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding-top: 100px; /* 아이콘 높이 고려하여 증가 (90px + 10px 여백) */
+  min-width: 250px; /* 최소 너비 설정 */
+}
+
+.step-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3em; /* 아이콘 크기 */
+  color: var(--primary-color);
+  background-color: #fff;
+  padding: 15px; /* 패딩 */
+  border-radius: 50%;
+  border: 4px solid var(--primary-color); /* 테두리 */
+  box-shadow: var(--shadow);
+  width: 90px; /* 아이콘 전체 크기 */
+  height: 90px; /* 아이콘 전체 크기 */
+  display: flex; /* 아이콘 중앙 정렬을 위해 */
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box; /* 패딩과 테두리를 포함하여 크기 계산 */
+}
+
+.step-number {
+  width: 50px; /* 크기 조정 */
+  height: 50px; /* 크기 조정 */
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4em; /* 크기 조정 */
+  font-weight: bold;
+  margin-bottom: 20px;
+  flex-shrink: 0; /* 플렉스 컨테이너에서 축소되지 않도록 */
+}
+
+.step-item h3 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+.step-item p {
+  color: var(--secondary-color);
+}
+
+.process-arrow {
+  font-size: 2.5em; /* 화살표 크기 조정 */
+  color: #ddd;
+  margin-top: 70px; /* 아이콘 높이 중간에 오도록 조정 */
+}
+
+
+#demo {
+  background-color: var(--background-light);
+  text-align: center;
+}
+
+.demo-steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px; /* 간격 증가 */
+  gap: 15px; /* 간격 조정 */
+  flex-wrap: wrap;
+}
+
+.demo-step-indicator {
+  padding: 12px 25px; /* 패딩 조정 */
+  border-radius: 25px; /* 더 부드러운 모양 */
+  background-color: #eee;
+  color: var(--secondary-color);
+  font-weight: bold;
+  cursor: pointer; /* 클릭 가능 표시 */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* 애니메이션 추가 */
+}
+
+.demo-step-indicator:hover {
+ transform: translateY(-3px); /* 살짝 위로 움직이는 효과 */
+}
+
+.demo-step-indicator.active {
+  background-color: var(--primary-color);
+  color: white;
+  transform: none; /* 활성화 상태에서는 움직이지 않음 */
+}
+
+.demo-step-line {
+  width: 50px; /* 길이 조정 */
+  height: 3px; /* 굵기 조정 */
+  background-color: #ddd;
+  margin: 0 10px;
+}
+
+.demo-content {
+  background-color: #fff;
+  padding: 30px; /* 데모 박스 내부 전체 패딩 조정 */
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  min-height: auto; /* 내용에 따라 자동 높이 조절 */
+  overflow: visible; /* 넘치는 내용 표시 */
+  text-align: left;
+  position: relative; /* 내부 절대 위치 요소 기준점 */
+  margin: 0 auto; /* 가운데 정렬 */
+  max-width: 800px; /* 최대 너비 설정 (컨텐츠 영역 너무 넓어지지 않게) */
+}
+
+.demo-pane {
+  display: none !important; /* <-- 이 부분에 !important 추가 */
+  width: 100%; /* 부모 demo-content 너비에 맞게 */
+  box-sizing: border-box; /* 패딩/보더 포함 크기 계산 */
+}
+
+.demo-pane.active {
+  display: block !important; /* <-- 이 부분에 !important 추가 */
+}
+
+/* 각 demo-pane 내부 여백 조정 - demo-content 패딩에 맞춰 조정 */
+.demo-pane[data-step="1"] .model-selection-grid {
+  margin-top: 20px; /* 위쪽 여백 */
+  margin-bottom: 20px; /* 아래쪽 여백 */
+}
+
+.demo-pane[data-step="1"] .next-step-button {
+  margin-top: 15px; /* 모델 그리드와의 간격 조정 */
+  margin-bottom: 0; /* 하단 여백 제거 */
+}
+
+
+.demo-pane[data-step="2"] .selected-model {
+  margin-bottom: 15px; /* 간격 조정 */
+}
+
+.demo-pane[data-step="2"] .data-setup-options {
+  margin-top: 15px; /* 위쪽 여백 조정 */
+  margin-bottom: 15px; /* 아래쪽 여백 조정 */
+}
+
+.demo-pane[data-step="2"] .data-source-content {
+   margin-top: 15px; /* 위쪽 여백 조정 */
+   margin-bottom: 15px; /* 아래쪽 여백 조정 */
+   padding: 20px; /* 내부 패딩 조정 */
+}
+
+.demo-pane[data-step="2"] .prev-step-button,
+.demo-pane[data-step="2"] .next-step-button {
+  margin-top: 20px; /* 위쪽 여백 조정 */
+  margin-bottom: 0; /* 하단 여백 제거 */
+}
+
+
+.demo-pane h3 {
+  font-size: 1.6em;
+  margin-bottom: 25px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.model-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.model-card {
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  background-color: #fff;
+}
+
+.model-card i {
+  font-size: 3em;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.model-card h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.model-card p {
+  font-size: 0.95em;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+.model-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.model-card.selected {
+  border-color: var(--primary-color);
+  background-color: #eef2ff;
+  transform: translateY(-5px);
+}
+
+.model-card.selected i {
+  color: var(--primary-color);
+}
+
+
+.data-setup-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.data-option-card {
+   border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  background-color: #fff;
+   min-width: 180px;
+}
+
+.data-option-card i {
+  font-size: 2.5em;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+   transition: color 0.3s ease;
+}
+
+.data-option-card h4 {
+  font-size: 1.1em;
+  margin-bottom: 0;
+   color: var(--text-color);
+}
+
+.data-option-card:hover {
+   border-color: var(--primary-color);
+   transform: translateY(-5px);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.data-option-card.active {
+   border-color: var(--primary-color);
+  background-color: #eef2ff;
+   transform: translateY(-5px);
+}
+
+.data-option-card.active i {
+  color: var(--primary-color);
+}
+
+
+.data-source-content {
+  border: 2px dashed #ddd;
+  border-radius: var(--border-radius);
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.data-source-content h4 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+   color: var(--text-color);
+}
+
+.upload-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.upload-button:hover {
+  background-color: #4a5acb;
+}
+
+#recommended-datasets-list {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+  text-align: left;
+  padding-right: 10px;
+}
+
+#recommended-datasets-list p {
+  text-align: center;
+  color: #666;
+}
+
+.dataset-item {
+  border: 1px solid #eee;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dataset-item:hover, .dataset-item.selected {
+  background-color: #eef2ff;
+  border-color: var(--primary-color);
+}
+
+
+/* 3단계 패널 내부 레이아웃 */
+.demo-pane[data-step="3"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+/* 3단계 주요 제목 */
+.demo-pane[data-step="3"] h3 {
+  font-size: 1.8em;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 선택된 모델/데이터 정보 스타일 */
+.demo-pane[data-step="3"] .final-selection-info {
+  font-size: 1em;
+  color: var(--secondary-color);
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* 선택된 모델/데이터 이름 강조 */
+.demo-pane[data-step="3"] .final-selection-info #final-model-name,
+.demo-pane[data-step="3"] .final-selection-info #final-data-name {
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-left: 5px;
+}
+
+
+/* 학습 섹션 스타일 */
+.training-section {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  background-color: #f9f9f9;
+}
+
+.training-section h4 {
+  font-size: 1.5em;
+  color: var(--text-color);
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* 학습 진행 바 컨테이너 */
+.training-progress-bar {
+  width: 100%;
+  height: 25px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 15px auto;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* 학습 진행 바 (실제 채워지는 부분) */
+.training-progress-bar .progress {
+  height: 100%;
+  width: 0%;
+  background-color: var(--accent-color);
+  line-height: 25px;
+  color: white;
+  transition: width 0.5s ease;
+  font-weight: bold;
+}
+
+/* 추가 학습 진행 바 색상 */
+.training-section .training-progress-bar .progress.retraining {
+  background-color: #ff9800; /* 주황색 계열 예시 */
+}
+
+/* 학습 상태 및 퍼센트 텍스트 스타일 */
+#training-status {
+  font-size: 1.1em;
+  color: var(--secondary-color);
+  margin-top: 15px;
+  min-height: 1.2em;
+  font-style: normal;
+  font-weight: bold;
+  white-space: pre-wrap; /* 줄 바꿈 문자(\n)를 실제 줄 바꿈으로 인식 */
+}
+
+/* 학습 시작 버튼 스타일 (기존 .cta-button 스타일 사용) */
+
+
+/* 배포 섹션 스타일 */
+.deployment-section {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: var(--border-radius);
+  background-color: #f9f9f9;
+}
+
+.deployment-section h4 {
+  font-size: 1.8em;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.deployment-section p {
+  font-size: 1.1em;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+}
+
+/* 다운로드 버튼 그룹 */
+.download-options {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* 다운로드 버튼 스타일 (기존 .cta-button, .secondary-button 스타일 사용) */
+/* .download-button, .api-button */
+
+/* 학습 추가로 더하기 버튼 스타일 */
+.retrain-button {
+  color: #ff9800;
+  border-color: #ff9800;
+}
+.retrain-button i {
+  margin-right: 5px;
+}
+
+
+/* 지원 형식 텍스트 스타일 */
+.deployment-section .supported-formats {
+  font-size: 0.9em;
+  color: #888;
+  margin-top: 20px;
+}
+
+
+.next-step-button, .prev-step-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+  margin-top: 30px;
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0; /* 하단 마진 조정 */
+}
+
+.next-step-button:hover, .prev-step-button:hover {
+  background-color: #4a5acb;
+  transform: translateY(-3px);
+}
+
+.next-step-button:disabled, .prev-step-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+.prev-step-button {
+  background-color: var(--secondary-color);
+}
+
+.prev-step-button:hover {
+  background-color: #5a6268;
+}
+
+
+#use-cases, #additional-ideas {
+  text-align: center;
+  background-color: var(--background-light);
+}
+#additional-ideas {
+   background-color: #fff;
+}
+
+.use-case-list, .ideas-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.use-case-item, .idea-item {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.use-case-item:hover, .idea-item:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+.idea-item {
+   text-align: center;
+}
+
+.use-case-item img {
+  max-width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  margin: -30px -30px 15px -30px;
+  width: calc(100% + 60px);
+}
+.idea-item i {
+   font-size: 2.5em;
+   color: var(--primary-color);
+   margin-bottom: 15px;
+}
+
+
+.use-case-item h3, .idea-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+   color: var(--text-color);
+}
+
+.use-case-item p {
+  font-size: 0.95em;
+  color: var(--secondary-color);
+  margin-bottom: 0;
+}
+
+.idea-item p {
+font-size: 0.95em;
+color: var(--secondary-color);
+margin-bottom: 0;
+}
+
+
+#cta-bottom {
+  text-align: center;
+  padding: 80px 0;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#cta-bottom h2 {
+  color: white;
+}
+
+#cta-bottom p {
+  color: #e9ecef;
+  margin-bottom: 40px;
+  font-size: 1.1em;
+}
+
+#cta-bottom .cta-button {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+#cta-bottom .cta-button:hover {
+  background-color: #ddd;
+   transform: translateY(-3px);
+}
+
+
+footer {
+  background-color: #32325D;
+  color: white;
+  padding: 50px 0 25px; /* 푸터 상하 패딩 조정 */
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px; /* 하위 섹션 간 간격 조정 */
+  flex-grow: 1; /* 남은 공간을 채우도록 성장 */
+}
+
+.footer-info, .footer-links, .footer-contact {
+  flex: 1;
+  min-width: 200px; /* 최소 너비 조정 */
+}
+
+.footer-info .logo {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footer-info p {
+  font-size: 0.9em;
+  color: #ccc;
+}
+
+.footer-links h3, .footer-contact h3 {
+  font-size: 1.1em;
+  margin-bottom: 20px; /* 제목 아래 간격 조정 */
+  color: white;
+  font-weight: bold;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .footer-links ul li {
+  margin-bottom: 10px; /* 목록 항목 간 간격 조정 */
+}
+
+footer .footer-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: color 0.3s ease;
+  font-size: 0.95em;
+}
+
+footer .footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-contact p {
+   font-size: 0.95em;
+   color: #ccc;
+   margin-bottom: 10px; /* 연락처 정보 간 간격 조정 */
+}
+
+
+.copyright {
+  text-align: center;
+  margin-top: 40px; /* copyright 위 간격 조정 */
+  padding-top: 20px; /* copyright 내부 상단 패딩 조정 */
+  border-top: 1px solid #555;
+  font-size: 0.85em;
+  color: #aaa;
+  width: 100%; /* 가로 중앙 정렬을 위해 너비 100% 설정 */
+}
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #hero .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .hero-content, .hero-image {
+      flex: none;
+      width: 100%;
+  }
+
+   .steps-process {
+      flex-direction: column;
+      gap: 50px; /* 간격 조정 */
+  }
+
+  .process-arrow {
+      transform: rotate(90deg);
+      margin: 30px 0; /* 간격 조정 */
+  }
+
+  .step-item {
+       padding-top: 0; /* 작은 화면에서는 절대 위치 해제하므로 패딩 제거 */
+       max-width: none;
+  }
+   .step-icon { /* 작은 화면에서는 아이콘과 번호가 겹치지 않도록 분리 */
+      position: static; /* 절대 위치 해제 */
+      transform: none;
+      margin-bottom: 10px; /* 번호와의 간격 */
+      width: 60px; /* 크기 유지 또는 조정 */
+      height: 60px; /* 크기 유지 또는 조정 */
+      padding: 0; /* 패딩 제거 */
+      border: none; /* 테두리 제거 */
+      box-shadow: none; /* 그림자 제거 */
+      font-size: 3em; /* 아이콘 크기 유지 */
+      background-color: transparent; /* 배경색 제거 */
+      color: var(--primary-color); /* 색상 유지 */
+   }
+   .step-number { /* 작은 화면에서 아이콘과 번호가 겹치지 않도록 분리 */
+     width: 40px;
+     height: 40px;
+     font-size: 1.2em;
+     margin-bottom: 15px; /* 아래 텍스트와의 간격 */
+     background-color: var(--primary-color); /* 배경색 유지 */
+     color: white; /* 색상 유지 */
+  }
+  .process-arrow {
+     font-size: 2em;
+     margin: 20px 0;
+  }
+
+ .demo-steps {
+     flex-direction: column;
+     gap: 15px;
+ }
+ .demo-step-line {
+     display: none;
+ }
+
+ .footer-content {
+     flex-direction: column; /* 992px 이하에서는 세로로 쌓이도록 유지 (필요에 따라 조정) */
+     gap: 30px;
+ }
+  #hero .container, #features .container, #how-it-works .container, #demo .container, #use-cases .container, #additional-ideas .container, #cta-bottom .container, footer .container {
+    padding: 0 15px; /* 좌우 패딩 줄임 */
+ }
+ section {
+     padding: 60px 0; /* 섹션 패딩 줄임 */
+ }
+  #features h2, #how-it-works h2, #demo h2, #use-cases h2, #additional-ideas h2, #cta-bottom h2 {
+    font-size: 2.2em; /* 섹션 제목 크기 조정 */
+    margin-bottom: 40px;
+  }
+
+ .demo-content {
+     padding: 20px; /* 데모 패널 패딩 줄임 */
+ }
+
+ .demo-pane h3 {
+     font-size: 1.4em;
+     margin-bottom: 20px;
+ }
+}
+
+@media (max-width: 768px) {
+  header .container {
+      flex-direction: column;
+      gap: 15px;
+  }
+  nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+  nav ul li {
+      margin-left: 0;
+  }
+
+  .hero-content h1 {
+      font-size: 2.8em; /* 제목 크기 조정 */
+  }
+  .cta-button, .secondary-button {
+      padding: 10px 20px;
+  }
+
+
+ .model-selection-grid, .data-setup-options, .use-case-list, .ideas-list {
+     grid-template-columns: 1fr;
+ }
+
+  .feature-item, .use-case-item, .idea-item {
+     padding: 25px; /* 패딩 조정 */
+ }
+  .use-case-item img {
+     margin: -25px -25px 15px -25px;
+     width: calc(100% + 50px);
+ }
+ .feature-item i {
+     font-size: 3em;
+     margin-bottom: 20px;
+ }
+  /* 작은 화면에서는 이미 위에서 조정됨 */
+  /* .step-icon { ... } */
+  /* .step-number { ... } */
+  .process-arrow {
+     font-size: 2em;
+     margin: 20px 0;
+  }
+
+ .demo-step-indicator {
+     padding: 10px 15px;
+ }
+ .demo-pane h3 {
+     font-size: 1.2em;
+     margin-bottom: 15px;
+ }
+
+  .training-progress-bar {
+     width: 90%;
+  }
+  .start-training-button, .next-step-button, .prev-step-button {
+      font-size: 1em;
+      padding: 10px 20px;
+  }
+
+  footer {
+      padding: 40px 0 20px; /* 푸터 패딩 유지 */
+  }
+  .footer-links h3, .footer-contact h3 {
+     margin-bottom: 15px;
+ }
+}
